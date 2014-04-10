@@ -79,7 +79,7 @@
 		$nvpstr = $nvpstr . "&L_BILLINGAGREEMENTDESCRIPTION0=".urlencode("Test Reference Transaction.");
 		$nvpstr = $nvpstr . "&RETURNURL=" . $returnURL;
 		$nvpstr = $nvpstr . "&CANCELURL=" . $cancelURL;
-		$nvpstr = $nvpstr . "&PAYMENTREQUEST_n_CURRENCYCODE=" . $currencyCodeType;
+		$nvpstr = $nvpstr . "&PAYMENTREQUEST_0_CURRENCYCODE=" . $currencyCodeType;
 
 		$_SESSION["currencyCodeType"] = $currencyCodeType;	  
 		$_SESSION["PaymentType"] = $paymentType;
@@ -186,6 +186,7 @@
 		//' Build a second API request to PayPal, using the token as the
 		//'  ID to get the details on the payment authorization
 		//'---------------------------------------------------------------------------
+		$_SESSION['TOKEN']=$token;
 	    $nvpstr="&TOKEN=" . $token;
 
 		//'---------------------------------------------------------------------------
